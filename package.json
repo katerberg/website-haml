@@ -8,13 +8,18 @@
   "license": "AGPL-1.0 OR AGPL-3.0",
   "private": false,
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "concurrently": "^3.5.1",
     "gulp": "^3.9.1",
     "gulp-haml": "^1.0.1",
+    "gulp-htmlmin": "^4.0.0",
     "http-server": "^0.11.1",
     "watch": "^1.0.2"
   },
   "scripts": {
-    "html": "gulp html",
-    "start": "gulp html && http-server dist/html"
+    "start": "concurrently --kill-others \"gulp\" \"http-server -p 8000 ./dist/html\""
   }
 }
