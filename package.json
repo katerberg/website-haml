@@ -1,0 +1,20 @@
+{
+  "name": "katerberg-website",
+  "version": "0.0.1",
+  "description": "Website Redesign Version One Million",
+  "main": "index.js",
+  "repository": "https://github.com/github.com/katerberg",
+  "author": "Mark Katerberg <katerberg@fastmail.fm>",
+  "license": "AGPL-1.0 OR AGPL-3.0",
+  "private": false,
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-haml": "^1.0.1",
+    "http-server": "^0.11.1",
+    "watch": "^1.0.2"
+  },
+  "scripts": {
+    "html": "gulp html",
+    "start": "gulp html && http-server dist/html"
+  }
+}
