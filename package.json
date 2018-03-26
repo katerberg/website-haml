@@ -14,12 +14,14 @@
     "babel-register": "^6.26.0",
     "concurrently": "^3.5.1",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
     "gulp-haml": "^1.0.1",
     "gulp-htmlmin": "^4.0.0",
+    "gulp-sass": "^3.2.1",
     "http-server": "^0.11.1",
     "watch": "^1.0.2"
   },
   "scripts": {
-    "start": "concurrently --kill-others \"gulp\" \"http-server -p 8000 ./dist/html\""
+    "start": "concurrently --kill-others \"gulp\" \"http-server -p 8000 ./dist\""
   }
 }
