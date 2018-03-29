@@ -4,15 +4,19 @@
         noon: '#FFF210',
         sunset: '#FF0037',
         nadir: '#000000',
+        // sunrise: '#baffc9',
+        // noon: '#ffffba',
+        // sunset: '#ffb3ba',
+        // nadir: '#bae1ff',
     }
-    const getColorBetween = (c1, c2, distance) => {
+    const getColorBetween = (c1, c2, distance = 0.5) => {
         let c = "#";
         for(let i = 0; i<3; i++) {
             const sub1 = c1.substring(1+2*i, 3+2*i);
             const sub2 = c2.substring(1+2*i, 3+2*i);
             const v1 = parseInt(sub1, 16);
             const v2 = parseInt(sub2, 16);
-            const v = Math.floor((v1 + v2) * (distance || 0.5));
+            const v = Math.floor(v1 * (1 - distance) + v2 * distance);
             const sub = v.toString(16).toUpperCase();
             c += ('0'+sub).slice(-2);
         }
@@ -48,8 +52,6 @@
             }
             colors[i] = getColorBetween(colorValues.sunset, colorValues.nadir, percentTil);
         }
-        console.log('MAK');
-        console.log(colors);
         return colors;
     };
 
